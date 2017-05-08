@@ -4,6 +4,9 @@ List of class files:
     Players Monsters
   Map
   Chunck
+    // GLOBAL SEED in main loaded from file or something
+    getChunck(int NorthSouth,int WestEast);
+    
   Main
     Drawing
   Keyboard
