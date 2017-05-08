@@ -10,7 +10,7 @@ List of class files:
   Main
     Drawing
   Keyboard
-  Ai
+  Ai/
     Ai
     Axon/Neuron
     Backwards propergation
