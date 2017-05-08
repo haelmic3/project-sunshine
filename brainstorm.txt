@@ -3,8 +3,38 @@ title:
   project sunshine
   what title
   um...
+  what was that other title
+  summer sadness
+  dosntatter
 concept:
-  tetris pinball
-  dungeons
+  tetris pinball:
+    the game would be to bounce peaces into place or something
+    or to play tetris and pinball at the same time... ?
+    this is probably not the best plan I'm already seeing problems
+    problems before the project even starts...
+  dungeons:
+    recommended that they were generative in structure
+    perhaps an infinite dungeon but have some permanence to it
+    I never liked it when the N.P.C.'s or monsters suddenly disappear
+    Anything created should be real and shouldn't disappear until it's killed or something...
+    I'm liking this idea.
+    map:
+      generative dungeon
+      more detail
+      
+    art:
+      link to concept art folder
+      is the art algorithme baised or are we doing chuncks by hand?
+        
+    characters:
+      designed by player or us?
+      
+    weapons:
+      melee fighting?
+      swords arrows magic?
+      or mid century Victorian rifles steam punk?
+      
+    other stuff I have 
+  
 notes:
   list made in a hurry forgive me.
