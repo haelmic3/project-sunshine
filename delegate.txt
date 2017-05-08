@@ -9,5 +9,5 @@ List of class files:
   Keyboard
   Ai
     Ai
-    Axon
-    other networksuff
+    Axon/Neuron
+    Backwards propergation
