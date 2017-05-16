@@ -1,0 +1,3 @@
+﻿  main.cpp
+main.obj : error LNK2001: unresolved external symbol "public: static class sf::RenderStates const sf::RenderStates::Default" (?Default@RenderStates@sf@@2V12@B)
+C:\Users\Michael\Documents\Visual Studio 2017\Projects\SFML\Debug\SFML.exe : fatal error LNK1120: 1 unresolved externals
