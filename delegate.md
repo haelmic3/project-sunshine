@@ -1,16 +1,16 @@
-List of class files:
+#List of class files:
 
-  Character
+##Character
     Players Monsters
-  Map
-  Chunck
+##Map
+##Chunck
     // GLOBAL SEED in main loaded from file or something
     getChunck(int NorthSouth,int WestEast);
     
-  Main
+##Main
     Drawing
-  Keyboard
-  Ai/
+##Keyboard
+  Ai/Ai/
     Ai
     Axon/Neuron
     Backwards propergation

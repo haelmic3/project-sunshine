@@ -1,0 +1,2 @@
+#exclude objects and archives everywhere
+*.[oa]

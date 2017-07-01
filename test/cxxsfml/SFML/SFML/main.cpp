@@ -75,6 +75,12 @@ public:
      pc.update(pc.x + unit*cos(angle), pc.y + unit*sin(angle));
      update();
    }
+   bool bounds(float unit, float angle){
+     return pc.x - unit * .5 + unit * 1.5 * cos(angle) > 0 &&
+            pc.x + unit * .5 + unit * 1.5 * cos(angle) < wid &&
+            pc.y - unit * .5 + unit * 1.5 * sin(angle) > 0 &&
+            pc.y + unit * .5 + unit * 1.5 * sin(angle) < len;
+   }
 };
 std::string ichar(unsigned rate) {
   std::string d;
@@ -104,10 +110,14 @@ int main(int argc, char*argv[]) {
       if (event.type == sf::Event::Closed)
         window.close();
     }
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+      window.close();
+    }
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)||
       sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
       //   0  r  0
-      world.move(frame / 1600, 0);
+      if(world.bounds(frame / 1600, 0))
+        world.move(frame / 1600, 0);
     }
       //  30     0.523598776
       //  45     0.785398163
@@ -115,7 +125,8 @@ int main(int argc, char*argv[]) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ||
       sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
       //  90  d  1.570796327
-      world.move(frame / 1600, 1.570796327);
+      if(world.bounds(frame / 1600, 2.570796327))
+        world.move(frame / 1600, 1.570796327);
     }
       // 120     2.094395102
       // 135     2.35619449
@@ -123,7 +134,8 @@ int main(int argc, char*argv[]) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) ||
       sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
       // 180  l  3.141592654
-      world.move(frame / 1600, 3.141592654);
+      if(world.bounds(frame / 1600, 3.141592654))
+        world.move(frame / 1600, 3.141592654);
     }
       // 210     3.665191429
       // 225     3.926990817
@@ -131,6 +143,7 @@ int main(int argc, char*argv[]) {
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ||
       sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
       // 270  u  4.71238898
+      if(world.bounds(frame / 1600, 4.71238898))
       world.move(frame / 1600, 4.71238898);
     }
       // 300     5.235987756
