@@ -95,7 +95,8 @@ int main(int argc, char*argv[]) {
   sf::Text text;
   sf::Clock clock;
   unsigned frame = 16000;
-  window.setVerticalSyncEnabled(true);
+  double angle;
+  //window.setVerticalSyncEnabled(true);
   if (!font.loadFromFile("arial.ttf"))
   {
     return 1;
@@ -109,49 +110,78 @@ int main(int argc, char*argv[]) {
     while (window.pollEvent(event)) {
       if (event.type == sf::Event::Closed)
         window.close();
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
+        window.close();
+      }
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)){
-      window.close();
+    angle = -1;
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D) ||
+        sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) || 
+          sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) || 
+            sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+          angle = 1.570796327;
+        }
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) || 
+            sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+            if (angle > 0) angle = -1;  // oops...
+            else angle = 4.71238898;
+        }
+      } else { // Just   >   was pressed not <
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ||
+            sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ||
+              sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+            angle = 0;
+          } else { angle = 5.497787144; }
+        } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ||
+              sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+            angle = 0.785398163;
+        else  angle = 0;
+      }
+    } else  if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) ||
+                sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
+      if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ||
+          sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::W) &&
+            !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+          angle = 2.35619449;
+        } else {
+          if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ||
+              sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+            angle = 3.926990817;
+          else angle = 3.141592654;
+       }
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ||
+          sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
+        if (!sf::Keyboard::isKeyPressed(sf::Keyboard::W) &&
+            !sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+        angle = 1.570796327;
+    } else if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ||
+               sf::Keyboard::isKeyPressed(sf::Keyboard::Up)){
+      angle = 4.71238898;
     }
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)||
-      sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-      //   0  r  0
-      if(world.bounds(frame / 1600, 0))
-        world.move(frame / 1600, 0);
-    }
+      //   0  >  0
       //  30     0.523598776
-      //  45     0.785398163
+      //  45  J  0.785398163
       //  60     1.047197551
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) ||
-      sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-      //  90  d  1.570796327
-      if(world.bounds(frame / 1600, 2.570796327))
-        world.move(frame / 1600, 1.570796327);
-    }
+      //  90  v  1.570796327
       // 120     2.094395102
-      // 135     2.35619449
+      // 135  L  2.35619449
       // 150     2.617993878
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A) ||
-      sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-      // 180  l  3.141592654
-      if(world.bounds(frame / 1600, 3.141592654))
-        world.move(frame / 1600, 3.141592654);
-    }
+      // 180  <  3.141592654
       // 210     3.665191429
-      // 225     3.926990817
+      // 225  F  3.926990817
       // 240     4.188790205
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W) ||
-      sf::Keyboard::isKeyPressed(sf::Keyboard::Up)) {
-      // 270  u  4.71238898
-      if(world.bounds(frame / 1600, 4.71238898))
-      world.move(frame / 1600, 4.71238898);
-    }
+      // 270  ^  4.71238898
       // 300     5.235987756
-      // 315     5.497787144
+      // 315  7  5.497787144
       // 330     5.759586532
-      // 360     6.283185307
-    
-    text.setString(ichar(1000000 / frame));
+      // 360  >  6.283185307
+    if(angle >= 0 && world.bounds(frame / 1600.0, angle))
+      world.move(frame / 1600.0, angle);
+    text.setString(ichar(1000000.0 / frame));
     window.clear();
     window.draw(world);
     window.draw(text);

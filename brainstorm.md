@@ -56,23 +56,23 @@ draft: 0.0.2:
      the player is born from magic so... the player can use magic?
 ####magic
      mp/stanima? I'd like for it to regenerate slowly and if used properly won't run out?
-     **level 1 magic
-     * sheild        - pushes everything away : uses allot of mp quickly?
-     * projectile    - tiny shield pushed at high speed : like a bullet : size of projectile+speed == mp usage
-     **level 2 magic
-     * plane         - makes a wall inbetween the player: uses much less mp then shield even when four are used
-     * pin           - uses almost no mp for the projectile all mp goes to velocity passes throught everything
-     **level 3 magic
-     * cube          - large cube can be used as a sheil small cube can be projected
-     * sword         - mp goes to repair and evaporation as well as the initial creation
-     **level 4 magic
-     * EXPLOSION     - uses all mp ?regardless? can be appled to anything : size of blast is relative to total mp
-     **level 5 magic
-     * wave of death - killes everything player included NO EXCEPTION radius of the death is determined by mp
-     **level 6 magic
-     * death in a box - it's contained in a box if the box breaks "wave of death" from the box
-     all magic after 3 is uselesss?
-     more notes on magic? ...
+   **level 1 magic**
+       * sheild        - pushes everything away : uses allot of mp quickly?
+       * projectile    - tiny shield pushed at high speed : like a bullet : size of projectile+speed == mp usage
+   **level 2 magic**
+       * plane         - makes a wall inbetween the player: uses much less mp then shield even when four are used
+       * pin           - uses almost no mp for the projectile all mp goes to velocity passes throught everything
+   **level 3 magic**
+       * cube          - large cube can be used as a sheil small cube can be projected
+       * sword         - mp goes to repair and evaporation as well as the initial creation
+   **level 4 magic**
+       * EXPLOSION     - uses all mp ?regardless? can be appled to anything : size of blast is relative to total mp
+   **level 5 magic**
+       * wave of death - killes everything player included NO EXCEPTION radius of the death is determined by mp
+   **level 6 magic**
+       * death in a box - it's contained in a box if the box breaks "wave of death" from the box
+         all magic after 3 is uselesss?
+   more notes on magic? ...
 #####whaterchesnust
    aren't a part of the game?
    what... why not?
